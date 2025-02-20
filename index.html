@@ -6,33 +6,25 @@
     <title>Dog Fun Facts</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f0f8ff, #e0f7fa);
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            overflow: hidden;
         }
 
         .container {
             text-align: center;
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .container:hover {
-            transform: translateY(-10px);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
             color: #333;
-            margin-bottom: 20px;
-            font-size: 2em;
         }
 
         .fact-display {
@@ -40,24 +32,22 @@
             font-size: 1.2em;
             color: #555;
             transition: opacity 0.5s ease-in-out;
-            min-height: 60px;
         }
 
         .fact-button, .connect-x-button {
-            padding: 12px 25px;
+            padding: 10px 20px;
             font-size: 1em;
             color: #fff;
             background-color: #007bff;
             border: none;
-            border-radius: 25px;
+            border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            margin: 10px;
+            transition: background-color 0.3s ease;
+            margin: 5px;
         }
 
         .fact-button:hover, .connect-x-button:hover {
             background-color: #0056b3;
-            transform: scale(1.05);
         }
     </style>
 </head>
@@ -125,8 +115,8 @@
         });
 
         document.getElementById('connect-x-button').addEventListener('click', () => {
-            // Redirect to Twitter's OAuth authorization page
-            window.location.href = 'https://api.twitter.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code';
+            // Redirect to the provided URL
+            window.location.href = 'https://x.com/i/flow/login?lang=en&mx=2';
         });
     </script>
 </body>
