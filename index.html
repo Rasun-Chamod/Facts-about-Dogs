@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Fun Facts</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f0f8ff, #e0f7fa);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-10px);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .fact-display {
+            margin: 20px 0;
+            font-size: 1.2em;
+            color: #555;
+            transition: opacity 0.5s ease-in-out;
+            min-height: 60px;
+        }
+
+        .fact-button, .connect-x-button {
+            padding: 12px 25px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin: 10px;
+        }
+
+        .fact-button:hover, .connect-x-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dog Fun Facts</h1>
+        <div id="fact-display" class="fact-display">Click the button to see a fun fact!</div>
+        <button id="fact-button" class="fact-button">Show Random Fact</button>
+        <button id="connect-x-button" class="connect-x-button">Connect to X</button>
+    </div>
+
+    <script>
+        const facts = [
+            {
+                "fact": "Sense of Smell",
+                "description": "Dogs have an extraordinary sense of smell, which is 10,000 to 100,000 times more acute than humans."
+            },
+            {
+                "fact": "Unique Nose Prints",
+                "description": "Just like human fingerprints, no two dogs have the same nose print."
+            },
+            {
+                "fact": "Sweat Glands",
+                "description": "Dogs only have sweat glands in their paw pads, which is why they pant to cool down."
+            },
+            {
+                "fact": "Breed Variety",
+                "description": "There are over 340 different dog breeds worldwide, recognized by various kennel clubs."
+            },
+            {
+                "fact": "Communication",
+                "description": "Dogs communicate through a combination of vocalizations, body language, and facial expressions."
+            },
+            {
+                "fact": "Intelligence",
+                "description": "The average dog is as intelligent as a two-year-old child and can understand about 165 words."
+            },
+            {
+                "fact": "Tail Wagging",
+                "description": "A dog's tail wagging direction can indicate its mood. Wagging to the right is often associated with happiness, while wagging to the left can indicate fear or anxiety."
+            },
+            {
+                "fact": "Ancient Companions",
+                "description": "Dogs were domesticated between 20,000 and 40,000 years ago, making them one of the first domesticated animals."
+            },
+            {
+                "fact": "Hearing Ability",
+                "description": "Dogs can hear sounds at frequencies as high as 65,000 Hz, compared to humans who can hear up to 20,000 Hz."
+            },
+            {
+                "fact": "Loyalty",
+                "description": "Dogs are known for their loyalty and have been shown to form strong bonds with their human companions, often going to great lengths to protect them."
+            }
+        ];
+
+        document.getElementById('fact-button').addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const fact = facts[randomIndex];
+            const factDisplay = document.getElementById('fact-display');
+            factDisplay.style.opacity = 0;
+            setTimeout(() => {
+                factDisplay.textContent = `${fact.fact}: ${fact.description}`;
+                factDisplay.style.opacity = 1;
+            }, 500);
+        });
+
+        document.getElementById('connect-x-button').addEventListener('click', () => {
+            // Redirect to Twitter's OAuth authorization page
+            window.location.href = 'https://api.twitter.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code';
+        });
+    </script>
+</body>
+</html>
